@@ -7,6 +7,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Support\Facades\Event;
+use MyEvent;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,11 @@ class EventServiceProvider extends ServiceProvider
 
         ChatMessageSent::class => [
             UpdateChat::class,
-        ]
+        ],
+
+        MyEvent::class => [
+            UpdateChat::class,
+        ],
     ];
 
     /**

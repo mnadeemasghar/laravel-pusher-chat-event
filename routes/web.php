@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ChatController;
-use App\Providers\ChatMessageSent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +22,3 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('send_message',[ChatController::class,'store'])->name('send');
-
-Route::get('/test', function (){
-    dd( event(new ChatMessageSent('hello world')) );
-});
